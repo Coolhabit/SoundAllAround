@@ -5,6 +5,7 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import ru.coolhabit.soundallaround.data.entity.ResultAlbums
 
 @Dao
 interface AlbumsDAO {
