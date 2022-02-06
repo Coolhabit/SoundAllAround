@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">SoundAllAround</string>
+    <string name="liner">:</string>
+    <string name="toast_home">Что-то пошло не так</string>
+    <string name="toast_details">Проверьте интернет соединение</string>
+
+    <string name="auth">Sign In</string>
+    <string name="reg">Sign Up</string>
+    <string name="name_hint">First name</string>
+    <string name="surname_hint">Surname</string>
+    <string name="age_hint">Age</string>
+    <string name="phone_hint">Phone number</string>
+    <string name="email_hint">Email</string>
+    <string name="pass_hint">Password</string>
+
+    <string name="no_name">Name is not entered!</string>
+    <string name="no_surname">Surname is not entered!</string>
+    <string name="no_age">Age is not entered!</string>
+    <string name="no_phone">Phone number is not entered!</string>
+    <string name="no_email">Email is not entered!</string>
+    <string name="no_pass">Password is not entered</string>
 </resources>
