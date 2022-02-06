@@ -19,7 +19,6 @@ import com.google.firebase.ktx.Firebase
 import ru.coolhabit.soundallaround.MainActivity
 import ru.coolhabit.soundallaround.R
 
-private const val MIN_PASS = 6
 private const val SIGN = "Войти"
 private const val MESSAGE_SIGN = "Введите данные для входа"
 
@@ -50,6 +49,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun showRegWindow() {
+
         val reg_name: EditText = findViewById(R.id.name_field)
         val reg_surname: EditText = findViewById(R.id.surname_field)
         val reg_age: EditText = findViewById(R.id.age_field)
@@ -57,27 +57,7 @@ class LoginActivity : AppCompatActivity() {
         val reg_email: EditText = findViewById(R.id.email_field)
         val reg_password: EditText = findViewById(R.id.password_field)
 
-        if (TextUtils.isEmpty(reg_name.text.toString())) {
-            Snackbar.make(root, R.string.no_name, Snackbar.LENGTH_SHORT).show()
-        }
-        else if (TextUtils.isEmpty(reg_surname.text.toString())) {
-            Snackbar.make(root, R.string.no_surname, Snackbar.LENGTH_SHORT).show()
-
-        }
-        else if (TextUtils.isEmpty(reg_age.text.toString())) {
-            Snackbar.make(root, R.string.no_age, Snackbar.LENGTH_SHORT).show()
-
-        }
-        else if (TextUtils.isEmpty(reg_phone.text.toString())) {
-            Snackbar.make(root, R.string.no_phone, Snackbar.LENGTH_SHORT).show()
-        }
-        else if (TextUtils.isEmpty(reg_email.text.toString())) {
-            Snackbar.make(root, R.string.no_email, Snackbar.LENGTH_SHORT).show()
-        }
-        else if (TextUtils.isEmpty(reg_password.text.toString()) || reg_password.length() < MIN_PASS) {
-            Snackbar.make(root, R.string.no_pass, Snackbar.LENGTH_SHORT).show()
-        } else {
-
+            if (checkAllFields()) {
             //регистрация пользователя
             FirebaseAuth.getInstance()
                 .createUserWithEmailAndPassword(
@@ -125,7 +105,7 @@ class LoginActivity : AppCompatActivity() {
                 Snackbar.make(root, "Введите вашу почту", Snackbar.LENGTH_SHORT).show()
                 return@setPositiveButton
             }
-            if (TextUtils.isEmpty(password.text.toString()) || password.length() < MIN_PASS) {
+            if (TextUtils.isEmpty(password.text.toString())) {
                 Snackbar.make(root, "Введите пароль", Snackbar.LENGTH_SHORT).show()
                 return@setPositiveButton
             }
@@ -155,5 +135,57 @@ class LoginActivity : AppCompatActivity() {
         val user = User(userId, name, surname, age, phone, email, pass)
 
         database.child("users").child(userId).setValue(user)
+    }
+
+    private fun checkAllFields(): Boolean {
+
+        val reg_name: EditText = findViewById(R.id.name_field)
+        val reg_surname: EditText = findViewById(R.id.surname_field)
+        val reg_age: EditText = findViewById(R.id.age_field)
+        val reg_phone: EditText = findViewById(R.id.phone_field)
+        val reg_email: EditText = findViewById(R.id.email_field)
+        val reg_password: EditText = findViewById(R.id.password_field)
+
+        if(reg_name.length() == 0) {
+            reg_name.error = "Name is needed!"
+            return false
+        }
+        if (reg_surname.length() == 0) {
+            reg_name.error = "Surname is needed!"
+            return false
+        }
+        if (reg_age.length() == 0) {
+            reg_name.error = "Age is needed"
+            return false
+        } else if (reg_age.text.toString().toInt() < 18) {
+            reg_name.error = "Age is under 18!"
+            return false
+        }
+        if (reg_phone.length() == 0) {
+            reg_name.error = "Phone number is needed!"
+            return false
+        }
+        if (reg_email.length() == 0) {
+            reg_name.error = "Email is needed!"
+            return false
+        }
+        if (reg_password.length() == 0) {
+            reg_name.error = "Password is needed!"
+            return false
+        } else if (reg_password.length() < 6) {
+            reg_name.error = "Minimum 6 character password!"
+            return false
+        } else if (!reg_password.text.toString().matches(".*[A-Z].*".toRegex())) {
+            reg_name.error = "Password must contain 1 Upper-case character!"
+            return false
+        } else if (!reg_password.text.toString().matches(".*[a-z].*".toRegex())) {
+            reg_name.error = "Password must contain 1 Lower-case character!"
+            return false
+        } else if (!reg_password.text.toString().matches(".*[0-9].*".toRegex())) {
+            reg_name.error = "Password must contain 1 Number!"
+            return false
+        }
+
+        return true
     }
 }
