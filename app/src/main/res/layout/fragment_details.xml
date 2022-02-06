@@ -39,7 +39,7 @@
             android:maxLines="1"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textStyle="bold"
-            tools:text="Dawn Fm" />
+            tools:text="Black Album" />
 
         <TextView
             android:id="@+id/details_artist_name"
@@ -50,7 +50,7 @@
             android:maxLines="1"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@color/red"
-            tools:text="The Weeknd" />
+            tools:text="Metallica" />
 
         <TextView
             android:id="@+id/details_genre"
@@ -61,7 +61,7 @@
             android:maxLines="1"
             android:textAppearance="?android:attr/textAppearanceListItemSmall"
             android:textColor="@color/grey"
-            tools:text="Soul" />
+            tools:text="Thrash Metal" />
 
         <TextView
             android:id="@+id/details_year"
@@ -72,7 +72,7 @@
             android:maxLines="1"
             android:textAppearance="?android:attr/textAppearanceListItemSmall"
             android:textColor="@color/grey"
-            tools:text="2022" />
+            tools:text="1990" />
 
         <TextView
             android:id="@+id/details_tracks"
@@ -85,6 +85,6 @@
             android:ellipsize="end"
             android:lineSpacingMultiplier="2"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            tools:text="Gasoline" />
+            tools:text="Nothing Else Matters" />
     </LinearLayout>
 </ScrollView>

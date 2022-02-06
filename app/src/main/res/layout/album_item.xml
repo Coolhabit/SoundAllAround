@@ -44,7 +44,7 @@
             android:textSize="@dimen/item_text_size_sp"
             app:layout_constraintLeft_toRightOf="@+id/pict"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="@tools:sample/lorem/random" />
+            tools:text="Dark Side of the Moon" />
 
         <TextView
             android:id="@+id/artist"
@@ -58,7 +58,7 @@
             android:textSize="@dimen/item_text_size_sp"
             app:layout_constraintLeft_toRightOf="@+id/pict"
             app:layout_constraintTop_toBottomOf="@+id/name"
-            tools:text="The Weeknd" />
+            tools:text="Pink Floyd" />
 
         <TextView
             android:id="@+id/liner"
@@ -80,11 +80,11 @@
             android:textSize="@dimen/item_text_size_sp"
             app:layout_constraintLeft_toRightOf="@+id/liner"
             app:layout_constraintTop_toBottomOf="@+id/name"
-            tools:text="2022" />
+            tools:text="1973" />
 
         <TextView
             android:id="@+id/style"
-            android:layout_width="260dp"
+            android:layout_width="wrap_content"
             android:layout_height="@dimen/item_text_height"
             android:layout_marginStart="@dimen/item_text_margin_start"
             android:layout_marginTop="@dimen/item_text_margin_top"
@@ -93,7 +93,20 @@
             android:textSize="@dimen/item_text_size_sp"
             app:layout_constraintLeft_toRightOf="@+id/pict"
             app:layout_constraintTop_toBottomOf="@+id/artist"
-            tools:text="Pop" />
+            tools:text="Prog Rock" />
+
+        <TextView
+            android:id="@+id/tracks"
+            android:layout_width="260dp"
+            android:layout_height="@dimen/item_text_height"
+            android:layout_marginStart="@dimen/item_text_margin_start"
+            android:layout_marginTop="@dimen/item_text_margin_top"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textSize="@dimen/item_text_size_sp"
+            app:layout_constraintLeft_toRightOf="@+id/style"
+            app:layout_constraintTop_toBottomOf="@+id/date"
+            tools:text="10 tracks" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

@@ -15,12 +15,14 @@ class AlbumsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     private val date = albumItemBinding.date
     private val picture = albumItemBinding.picture
     private val style = albumItemBinding.style
+    private val tracks = albumItemBinding.tracks
 
     fun bind(resultAlbums: ResultAlbums) {
         name.text = resultAlbums.collectionName
         artist.text = resultAlbums.artistName
         date.text = editData(resultAlbums.releaseDate)
         style.text = resultAlbums.primaryGenreName
+        tracks.text = resultAlbums.trackCount.toString() + " tracks"
 
         if (resultAlbums.artworkUrl100.isEmpty()) {
             picture.setImageResource(R.drawable.white)
