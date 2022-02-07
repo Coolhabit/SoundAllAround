@@ -10,4 +10,5 @@
     <color name="yellow">#E1DCAF</color>
     <color name="grey">#C8CED1</color>
     <color name="red">#8A3434</color>
+    <color name="mtrl_textinput_default_box_stroke_color">#081870</color>
 </resources>

@@ -11,6 +11,7 @@ import android.widget.EditText
 import androidx.appcompat.app.AlertDialog
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.google.android.material.snackbar.Snackbar
+import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.DatabaseReference
@@ -139,7 +140,7 @@ class LoginActivity : AppCompatActivity() {
 
     private fun checkAllFields(): Boolean {
 
-        val reg_name: EditText = findViewById(R.id.name_field)
+        val reg_name: TextInputEditText = findViewById(R.id.name_field)
         val reg_surname: EditText = findViewById(R.id.surname_field)
         val reg_age: EditText = findViewById(R.id.age_field)
         val reg_phone: EditText = findViewById(R.id.phone_field)
